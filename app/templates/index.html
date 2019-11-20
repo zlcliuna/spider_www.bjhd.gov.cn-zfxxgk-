@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {{ super() }}
+		<div class="formContener wrap">
+			<form action="{{ url_for('web.search') }}" class="layui-form" target="_blank">
+				<!-- 关键字 -->
+				<div class="layui-form-item">
+					<label class="layui-form-label">关键字:</label>
+					<div class="layui-input-block">
+						<input type="text" name="keyword" id="" value="" required="" lay-verify="required" placeholder="请输入查询关键字" class="layui-input" />
+					</div>
+				</div>
+
+				<!-- 委办局，单位，街镇 -->
+				<div class="layui-form-item">
+					<label class="layui-form-label">委办局:</label>
+					<div class="layui-input-block">
+						<select name="department">
+							<option value=""></option>
+							<option value="区政府办公室">区政府办公室</option>
+							<option value="区发展改革委">区发展改革委</option>
+							<option value="区教委">区教委</option>
+							<option value="区民政局">区民政局</option>
+							<option value="区司法局">区司法局</option>
+							<option value="区财政局">区财政局</option>
+							<option value="区人力资源社会保障局">区人力资源社会保障局</option>
+							<option value="区生态环境局">区生态环境局</option>
+							<option value="区住房城乡建设委（征收办）">区住房城乡建设委（征收办）</option>
+							<option value="区城市管理委">区城市管理委</option>
+							<option value="区农业农村局">区农业农村局</option>
+							<option value="区水务局">区水务局</option>
+							<option value="区商务局">区商务局</option>
+							<option value="区文化和旅游局">区文化和旅游局</option>
+							<option value="区卫生健康委">区卫生健康委</option>
+							<option value="区审计局">区审计局</option>
+							<option value="区国资委">区国资委</option>
+							<option value="区房管局">区房管局</option>
+							<option value="区体育局">区体育局</option>
+							<option value="区统计局">区统计局</option>
+							<option value="区园林绿化局">区园林绿化局</option>
+							<option value="区金融办">区金融办</option>
+							<option value="区人防办">区人防办</option>
+							<option value="区民族宗教办">区民族宗教办</option>
+							<option value="区信访办">区信访办</option>
+							<option value="海淀园管委会(区科信局)">海淀园管委会(区科信局)</option>
+							<option value="区北部开发办">区北部开发办</option>
+							<option value="城市服务管理指挥中心">城市服务管理指挥中心</option>
+							<option value="城管执法局">城管执法局</option>
+							<option value="区市场监管局">区市场监管局</option>
+							<option value="区政务服务局">区政务服务局</option>
+							<option value="区医保局">区医保局</option>
+							<option value="区应急管理局">区应急管理局</option>
+							<option value="" disabled="disabled">-------------------------------------------- 事业单位 --------------------------------------------</option>
+							<option value="区档案馆">区档案馆</option>
+							<option value="区环卫服务中心">区环卫服务中心</option>
+							<option value="区地震局">区地震局</option>
+							<option value="区融媒体中心">区融媒体中心</option>
+							<option value="区农经站">区农经站</option>
+							<option value="圆明园管理处">圆明园管理处</option>
+							<option value="区气象局">区气象局</option>
+							<option value="" disabled="disabled">-------------------------------------------- 街道办事处 --------------------------------------------</option>
+							<option value="万寿路街道">万寿路街道</option>
+							<option value="羊坊店街道">羊坊店街道</option>
+							<option value="甘家口街道">甘家口街道</option>
+							<option value="八里庄街道">八里庄街道</option>
+							<option value="紫竹院街道">紫竹院街道</option>
+							<option value="北下关街道">北下关街道</option>
+							<option value="北太平庄街道">北太平庄街道</option>
+							<option value="海淀街道">海淀街道</option>
+							<option value="中关村街道">中关村街道</option>
+							<option value="学院路街道">学院路街道</option>
+							<option value="清河街道">清河街道</option>
+							<option value="青龙桥街道">青龙桥街道</option>
+							<option value="香山街道">香山街道</option>
+							<option value="西三旗街道">西三旗街道</option>
+							<option value="马连洼街道">马连洼街道</option>
+							<option value="花园路街道">花园路街道</option>
+							<option value="田村路街道">田村路街道</option>
+							<option value="上地街道">上地街道</option>
+							<option value="曙光街道">曙光街道</option>
+							<option value="燕园街道">燕园街道</option>
+							<option value="清华园街道">清华园街道</option>
+							<option value="永定路街道">永定路街道</option>
+							<option value="" disabled="disabled">-------------------------------------------- 镇政府 --------------------------------------------</option>
+							<option value="四季青镇">四季青镇</option>
+							<option value="东升镇">东升镇</option>
+							<option value="海淀镇">海淀镇</option>
+							<option value="西北旺镇">西北旺镇</option>
+							<option value="温泉镇">温泉镇</option>
+							<option value="苏家坨镇">苏家坨镇</option>
+							<option value="上庄镇">上庄镇</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- 栏目 -->
+				<div class="layui-form-item">
+					<label class="layui-form-label">栏目名称:</label>
+					<div class="layui-input-block">
+						<input type="text" name="column" id="" value="" placeholder="请输入栏目名称,不输入查询所有栏目" class="layui-input" />
+					</div>
+				</div>
+
+				<!-- 开始时间 -->
+				<div class="layui-form-item">
+					<label class="layui-form-label">开始时间:</label>
+					<div class="layui-input-block">
+						<input type="text" name="startTime" id="startTime" value="" placeholder="请输入查询开始时间" class="layui-input" />
+					</div>
+				</div>
+
+				<!-- 结束时间 -->
+				<div class="layui-form-item">
+					<label class="layui-form-label">结束时间:</label>
+					<div class="layui-input-block">
+						<input type="text" name="endTime" id="endTime" value="" placeholder="请输入查询结束时间" class="layui-input" />
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit="" lay-filter="formXxgk">提交</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+{% endblock %}
+{% block script %}
+    {{ super() }}
+    <script>
+    //formXxgk
+    layui.use(['form','laydate'], function(){
+      var form = layui.form;
+        var startTime = layui.laydate;
+        var endTime = layui.laydate;
+
+      //监听提交
+
+        //日期
+        startTime.render({
+            elem: '#startTime'
+        });
+        endTime.render({
+            elem: '#endTime'
+        });
+    });
+    </script>
+{% endblock %}

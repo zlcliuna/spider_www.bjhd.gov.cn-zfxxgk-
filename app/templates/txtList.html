@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+{{ super() }}
+    <div class="wrap oHid">
+    {% for item in data %}
+        <div class="location">
+            <h2>{{ item.location.depart}}&nbsp;&gt;&nbsp;{{ item.location.column}}</h2>
+            <p>共<span>{{ item.location.total}}</span>条</p>
+        </div>
+        <ul class="listBox">
+            {% for li in item.list %}
+                <li>
+                    <span class="date">{{ li.date }}</span>
+                    <a href="{{ li.link }}" target="_blank">{{ li.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </div>
+{% endblock %}

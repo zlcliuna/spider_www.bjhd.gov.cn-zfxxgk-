@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {% block title %}
+        <title>海淀区信息公开大厅</title>
+        {% endblock %}
+
+        {% block head %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='layui/css/layui.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"/>
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+		<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+		<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+        {% endblock %}
+	</head>
+	<body>
+        {% block top %}
+            <div class="site-title wrap title_xxgk">
+				<fieldset><legend>信息公开大厅信息查询 V1.0</legend></fieldset>
+			</div>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block script %}
+        <script type="text/javascript" src="{{ url_for('static',filename='layui/layui.all.js') }}"></script>
+        {% endblock %}
+	</body>
+</html>
